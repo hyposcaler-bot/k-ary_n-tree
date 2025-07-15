@@ -47,7 +47,7 @@ The combined work of Charles Clos, Charles Lieserson, F. Petrini, M. Vanneschi w
 The following are taken from Petrini and Vanneschi's paper [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
 
-## Vizualizing
+## Definition of a k-ary n-tree/fat-tree
 
 The following definitions were pulled from Petrini and Vanneschi's paper and used as the foundation for the visualizer
 
