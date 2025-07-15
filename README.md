@@ -30,7 +30,7 @@ While Leiserson's paper provides a general description of Fat-trees and does a g
 
 in 1953 Charles Clos authored a paper entitled [A Study of Non- Blocking Switching Networks](https://ieeexplore.ieee.org/document/6770468).  In this paper Clos was primarily exploring optimal strategies for creating multi-stage networks from individual crossbar fabrics.   The stratagies he came up with in would go on to be known as Clos networks.
 
-It it frenquently said that Fat-trees are Clos, but not all Clos are Fat-trees.  In particular a Clos built using the same value for m, n and r does indeed have sub-graphs that are Fat-Trees
+It is frequently said that Fat-trees are Clos, but not all Clos are Fat-trees.  In particular a Clos built using the same value for m, n and r does indeed have sub-graphs that are k-ary n-trees, and k-ary n-trees are Fat-Trees
 
 if you split the middle stage nodes of a Clos you will end up with two separate graphs each resembling a k-ary n-tree. 
 
