@@ -34,16 +34,7 @@ It it frenquently said that Fat-trees are Clos, but not all Clos are Fat-trees. 
 
 if you split the middle stage nodes of a Clos you will end up with two separate graphs each resembling a k-ary n-tree. 
 
-The roots of a A k-ary n-tree always have unused ports for connecting to yet another level of roots.
-
-To build a Clos from a k-ary n-tree, you simple reflect the entire tree structure across the root switches, creating a symmetric fabric.
-
-As an example with a 3 stage Clos
-
-- The ingress & middle stages are a k-ary 2-tree
-- The egress and middle stages also are a k-ary 2-tree
-
-This creates the characteristic "folded" Clos topology where packets can traverse: Host → Ingress Tree → Middle Stage → Egress Tree → Host.  
+If start with a 3-stage Clos and remove the ingress stage, the remaining egress stage, middle stage, and unused R ports (previously connected to the ingress) of the middle stage form a k-ary 2-tree.  likewise, you were to remove the egress stage the remaining ingress stage, middle stage and r ports that formerly connected to the egress stage also form a k-ary 2-tree.   
 
 This is why people often equate Fat-Tree's with Clos. The ingress and middle stage of a Clos form a fat-tree as desribed by Petrini and Vanneschi as does the middle-stage and egress stage.
 
@@ -53,7 +44,7 @@ The combined work of Charles Clos, Charles Leiserson, F. Petrini, M. Vanneschi w
 
 ## Definition of a k-ary n-tree/fat-tree
 
-The following definitions were pulled from section 2 of Petrini and Vanneschi's paper and used as the foundation for the visualizer
+The following definitions were pulled from section 2 of Petrini and Vanneschi's paper and used as the foundation for the logic the visualizer uses.
 
 ### Fat-tree Definition
 
