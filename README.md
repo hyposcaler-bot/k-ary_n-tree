@@ -18,40 +18,38 @@ use your browser to open the file k-ary_n-tree_viz.html file found in the root o
 
 ## What is a k-ary n-tree
 
-In short it is a fat-tree
+In short it is a Fat-Tree
 
 In 1997 Fabrizio Petrini and Marco Vanneschi from the Department of Computer Science at the University of Pisa in Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
-In part Petrini and Vanneschi's paper built on Charles E. Leiserson's article from 1985 [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192).  In the time between Leiserson paper, and Petrini/Vanneschi's paper, Fat-trees had seen considerable use as interconnects in supercomputing and other distributed systems.   
+In part Petrini and Vanneschi's paper built on Charles E. Leiserson's article from 1985 [Fat-Trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192).  In the time between Leiserson paper, and Petrini/Vanneschi's paper, Fat-Trees had seen considerable use as interconnects in supercomputing and other distributed systems.   
 
-While Leiserson's paper provides a general description of Fat-trees and does a great deal of work to prove them as being useful as Universal networks, Petrini and Vanneschi's paper provides a formal definition for them. 
+While Leiserson's paper provides a general description of Fat-Trees and does a great deal of work to prove them as being useful as Universal networks, Petrini and Vanneschi's paper provides a formal definition for them. 
 
 ## Similarity to a Clos
 
-in 1953 Charles Clos authored a paper entitled [A Study of Non- Blocking Switching Networks](https://ieeexplore.ieee.org/document/6770468).  In this paper Clos was primarily exploring optimal strategies for creating multi-stage networks from individual crossbar fabrics.   The stratagies he came up with in would go on to be known as Clos networks.
+in 1953 Charles Clos authored a paper entitled [A Study of Non- Blocking Switching Networks](https://ieeexplore.ieee.org/document/6770468).  In this paper Clos was primarily exploring optimal strategies for creating multi-stage networks from individual crossbar fabrics.   The strategies he came up with in would go on to be known as Clos networks.
 
-It is frequently said that Fat-trees are Clos, but not all Clos are Fat-trees.  In particular a Clos built using the same value for m, n and r does indeed have sub-graphs that are k-ary n-trees, and k-ary n-trees are Fat-Trees
+It is frequently said that Fat-Trees are Clos, but not all Clos are Fat-Trees.  In particular a Clos that was built using the same value for m, n and r does indeed have sub-graphs that also happen to be k-ary n-trees, and k-ary n-trees are Fat-Trees
 
-if you split the middle stage nodes of a Clos that was built using identical values for m, n and r, you will end up with two separate graphs each resembling a k-ary n-tree. 
+If you start with a 3-stage Clos and remove the ingress stage, the remaining egress stage, middle stage, and unused R ports (previously connected to the ingress) of the middle stage form a k-ary 2-tree.  likewise, you were to remove the egress stage the remaining ingress stage, middle stage and r ports that formerly connected to the egress stage also form a k-ary 2-tree.   
 
-If start with a 3-stage Clos and remove the ingress stage, the remaining egress stage, middle stage, and unused R ports (previously connected to the ingress) of the middle stage form a k-ary 2-tree.  likewise, you were to remove the egress stage the remaining ingress stage, middle stage and r ports that formerly connected to the egress stage also form a k-ary 2-tree.   
-
-This is why people often equate Fat-Tree's with Clos. The ingress and middle stage of a Clos form a fat-tree as desribed by Petrini and Vanneschi as does the middle-stage and egress stage.
+This is why people often equate Fat-Tree's with Clos. The ingress and middle stages of a Clos form a Fat-Tree as desribed by Petrini and Vanneschi as do the middle-stages and egress stage.
 
 ## Why are k-ary n-trees important to datacenter networking?
 
-The combined work of Charles Clos, Charles Leiserson, F. Petrini, M. Vanneschi would go on to inform the work of Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's in their 2008 paper [A Scalable, Commodity Data Center Network Architecture](https://dl.acm.org/doi/abs/10.1145/1402958.1402967) which in turn would influence how modern datacenter networks have been built since.
+The combined work of Charles Clos, Charles Leiserson, F. Petrini, and M. Vanneschi would go on to inform the work of Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's in their 2008 paper [A Scalable, Commodity Data Center Network Architecture](https://dl.acm.org/doi/abs/10.1145/1402958.1402967) which in turn would influence how modern datacenter networks have been built since.
 
-## Definition of a k-ary n-tree/fat-tree
+## Definition of a k-ary n-tree/Fat-Tree
 
 The following definitions were pulled from section 2 of Petrini and Vanneschi's paper and used as the foundation for the logic the visualizer uses.
 
-### Fat-tree Definition
+### Fat-Tree Definition
 
-*(Fat-tree)*: A fat-tree is a collection of vertices connected by edges and is defined recursively as follows:
+*(Fat-Tree)*: A Fat-Tree is a collection of vertices connected by edges and is defined recursively as follows:
 
-- A single vertex by itself is a fat-tree. This vertex is also the root of the fat-tree.
-- If v₁, v₂, ..., vᵢ are vertices and T₁, T₂, ..., Tⱼ are fat-trees, with r₁, r₂, ..., rₖ as roots (j and k need not be equal), a new fat-tree is built by connecting with edges, in any manner, the vertices v₁, v₂, ..., vᵢ to the roots r₁, r₂, ..., rₖ. The roots of the new fat-tree are v₁, v₂, ..., vᵢ.
+- A single vertex by itself is a Fat-Tree. This vertex is also the root of the Fat-Tree.
+- If v₁, v₂, ..., vᵢ are vertices and T₁, T₂, ..., Tⱼ are Fat-Trees, with r₁, r₂, ..., rₖ as roots (j and k need not be equal), a new Fat-Tree is built by connecting with edges, in any manner, the vertices v₁, v₂, ..., vᵢ to the roots r₁, r₂, ..., rₖ. The roots of the new Fat-Tree are v₁, v₂, ..., vᵢ.
 
 ### k-ary n-tree Definition
 
