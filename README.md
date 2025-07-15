@@ -41,7 +41,6 @@ To build a Clos from a k-ary n-tree, you simple reflect the entire tree structur
 As an example with a 3 stage Clos
 
 - The ingress & middle stages are a k-ary 2-tree
-- Root switches become the middle stage of the Clos
 - The egress and middle stages also are a k-ary 2-tree
 
 This creates the characteristic "folded" Clos topology where packets can traverse: Host → Ingress Tree → Middle Stage → Egress Tree → Host.  
