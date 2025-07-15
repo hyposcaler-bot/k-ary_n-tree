@@ -46,14 +46,9 @@ Not all Clos are fat-tree, but a Clos where m = n = r, can be thought of as a Fa
 
 The combined work of Charles Clos, Charles Lieserson, F. Petrini, M. Vanneschi would go on to inform the work of Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's in thier 2008 paper [A Scalable, Commodity Data Center Network Architecture](https://cseweb.ucsd.edu/~vahdat/papers/sigcomm08.pdf) which in turn would lay the foundation upon which most modern datacenter networks have been built since.
 
-## Definitions
-
-The following are taken from Petrini and Vanneschi's paper [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
-
-
 ## Definition of a k-ary n-tree/fat-tree
 
-The following definitions were pulled from Petrini and Vanneschi's paper and used as the foundation for the visualizer
+The following definitions were pulled from section 2 of Petrini and Vanneschi's paper and used as the foundation for the visualizer
 
 ### Fat-tree Definition
 
