@@ -1,10 +1,16 @@
 # k-ary n-tree visualizer
 
+This repo is primarily for a interactive utility for visualizing k-ary n-tree's
+
 ## What is a k-ary n-tree
 
-In 1997 F. Petrini and M. Vanneschi from Department of Computer Science, University of Pisa, Pisa, Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
+In 1997 F. Petrini and M. Vanneschi from the Department of Computer Science at the University of Pisa, Pisa, Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
-In part Petrini and Vanneschi's paper builds on Charles E. Lierseron's [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192)
+In part Petrini and Vanneschi's paper build on Charles E. Lierseron's article [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192)
+
+These two papers combined with Charle's Clos's 2008 paper [A study of non-blocking switching networks](https://ieeexplore.ieee.org/document/6770468) played a signifigant role in how HPC interconnects over the last 4 decades.
+
+In 2008 Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's paper [A Scalable, Commodity Data Center Network Architecture](https://cseweb.ucsd.edu/~vahdat/papers/sigcomm08.pdf) would leverage these same ideas and lay the foundation upon which most modern datacenter network fabrics have been build since.
 
 ## Definitions
 
