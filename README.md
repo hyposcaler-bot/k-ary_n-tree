@@ -18,6 +18,8 @@ use your browser to open the file k-ary_n-tree_viz.html file found in the root o
 
 ## What is a k-ary n-tree
 
+In short it is a fat-tree
+
 In 1997 Fabrizio Petrini and Marco Vanneschi from the Department of Computer Science at the University of Pisa in Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
 In part Petrini and Vanneschi's paper built on Charles E. Leiserson's article from 1985 [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192).  In the time between Leiserson paper, and Petrini/Vanneschi's paper, Fat-trees had seen considerable use as interconnects in supercomputing.   
@@ -26,9 +28,15 @@ While Leiserson's paper provides a general description of Fat-trees and does a g
 
 ## Similarity to a Clos
 
-A k-ary n-tree, as formally defined by Petrini and Vanneschi, can be thought of as forming one half of a complete Clos. 
+in 1952 Charles Clos authored a paper entitled [A Study of Non- Blocking Switching Networks](https://ieeexplore.ieee.org/document/6770468).  In this paper Clos was primarily exploring optimal strategies for creating mult-stage networks from individual crossbar fabrics.   The stragies he came up with in this paper would go on to be known as Clos networks.
 
-A k-ary n-tree inherently has unused upward ports at its root. To complete the Clos topology, you reflect the entire tree structure across these root switches, creating a symmetric bidirectional fabric.
+It it frenquently said that Fat-trees are Clos fabrics, but not all Clos are Fat-trees.  In particular a Clos built using the same value for m, n and r does indeed have sub-graphs that are k-ary n-trees
+
+if you split a Clos along the middle stage you will end up with two seperate graphs each resembling a k-ary n-tree. 
+
+A k-ary n-tree inherently has unused upward ports at its root. 
+
+To complete the Clos topology, you reflect the entire tree structure across these root switches, creating a symmetric bidirectional fabric.
 
 As an example to get from a 2-ary 2-tree to a 3 stage Clos
 
@@ -40,11 +48,9 @@ This creates the characteristic "folded" Clos topology where packets can travers
 
 This is why people often equate Fat-Tree's with Clos. The ingrees and middle stage of a Clos form a fat-tree as desribed by Petrini and Vanneschi as does the middle-stage and egress stage.
 
-Not all Clos are fat-tree, but a Clos where m = n = r, can be thought of as a Fat-tree.
+## Why are k-ary n-trees important to datacenter networking?
 
-## Why are they important to datacenter networking?
-
-The combined work of Charles Clos, Charles Lieserson, F. Petrini, M. Vanneschi would go on to inform the work of Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's in thier 2008 paper [A Scalable, Commodity Data Center Network Architecture](https://cseweb.ucsd.edu/~vahdat/papers/sigcomm08.pdf) which in turn would lay the foundation upon which most modern datacenter networks have been built since.
+The combined work of Charles Clos, Charles Lieserson, F. Petrini, M. Vanneschi would go on to inform the work of Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's in thier 2008 paper [A Scalable, Commodity Data Center Network Architecture](https://dl.acm.org/doi/abs/10.1145/1402958.1402967) which in turn would influence how modern datacenter networks have been built since.
 
 ## Definition of a k-ary n-tree/fat-tree
 
