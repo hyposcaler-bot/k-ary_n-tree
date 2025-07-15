@@ -2,6 +2,16 @@
 
 This repo is primarily for a interactive utility for visualizing k-ary n-tree's
 
+## how to use the visualizer
+
+1. clone the repo
+
+```
+git clone https://github.com/hyposcaler-bot/k-ary_n-tree.git
+```
+
+open the file k-ary_n-tree_viz.html found in the root of the repo with your browser.
+
 ## What is a k-ary n-tree
 
 In 1997 Fabrizio Petrini and Marco Vanneschi from the Department of Computer Science at the University of Pisa in Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
