@@ -22,7 +22,7 @@ In short it is a fat-tree
 
 In 1997 Fabrizio Petrini and Marco Vanneschi from the Department of Computer Science at the University of Pisa in Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
-In part Petrini and Vanneschi's paper built on Charles E. Leiserson's article from 1985 [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192).  In the time between Leiserson paper, and Petrini/Vanneschi's paper, Fat-trees had seen considerable use as interconnects in supercomputing.   
+In part Petrini and Vanneschi's paper built on Charles E. Leiserson's article from 1985 [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192).  In the time between Leiserson paper, and Petrini/Vanneschi's paper, Fat-trees had seen considerable use as interconnects in supercomputing and other distributed systems.   
 
 While Leiserson's paper provides a general description of Fat-trees and does a great deal of work to prove them as being useful as Universal networks, Petrini and Vanneschi's paper provides a formal definition for them. 
 
