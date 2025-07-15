@@ -32,7 +32,7 @@ in 1953 Charles Clos authored a paper entitled [A Study of Non- Blocking Switchi
 
 It is frequently said that Fat-trees are Clos, but not all Clos are Fat-trees.  In particular a Clos built using the same value for m, n and r does indeed have sub-graphs that are k-ary n-trees, and k-ary n-trees are Fat-Trees
 
-if you split the middle stage nodes of a Clos you will end up with two separate graphs each resembling a k-ary n-tree. 
+if you split the middle stage nodes of a Clos that was built using identical values for m, n and r, you will end up with two separate graphs each resembling a k-ary n-tree. 
 
 If start with a 3-stage Clos and remove the ingress stage, the remaining egress stage, middle stage, and unused R ports (previously connected to the ingress) of the middle stage form a k-ary 2-tree.  likewise, you were to remove the egress stage the remaining ingress stage, middle stage and r ports that formerly connected to the egress stage also form a k-ary 2-tree.   
 
