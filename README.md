@@ -4,19 +4,40 @@ This repo is primarily for a interactive utility for visualizing k-ary n-tree's
 
 ## What is a k-ary n-tree
 
-In 1997 F. Petrini and M. Vanneschi from the Department of Computer Science at the University of Pisa, Pisa, Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
+In 1997 Fabrizio Petrini and Marco Vanneschi from the Department of Computer Science at the University of Pisa in Italy published a paper entitled [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
-In part Petrini and Vanneschi's paper build on Charles E. Lierseron's article [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192)
+In part Petrini and Vanneschi's paper built on Charles E. Leiserson's article from 1985 [Fat-trees: Universal networks for hardware-efficient supercomputing](https://ieeexplore.ieee.org/abstract/document/6312192).  In the time between Leiserson paper, and Petrini/Vanneschi's paper, Fat-trees had seen considerable use as interconnects in supercomputing.   
 
-These two papers combined with Charle's Clos's 2008 paper [A study of non-blocking switching networks](https://ieeexplore.ieee.org/document/6770468) played a signifigant role in how HPC interconnects over the last 4 decades.
+While Leiserson's paper provides a general description of Fat-trees and does a great deal of work to prove them as being useful as Universal networks, Petrini and Vanneschi's paper provides a formal definition for them. 
 
-In 2008 Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's paper [A Scalable, Commodity Data Center Network Architecture](https://cseweb.ucsd.edu/~vahdat/papers/sigcomm08.pdf) would leverage these same ideas and lay the foundation upon which most modern datacenter network fabrics have been build since.
+A k-ary n-tree, as formally defined by Petrini and Vanneschi, can be thought of as forming one half of a complete Clos. 
+
+A k-ary n-tree inherently has unused upward ports at its root. To complete the Clos topology, you reflect the entire tree structure across these root switches, creating a symmetric bidirectional fabric.
+
+As an example to get from a 2-ary 2-tree to a 3 stage Clos
+
+- The original k-ary n-tree forms the ingress & middle stages
+- Root switches become the middle stage of the Clos
+- The mirrored k-ary n-tree forms as the middle and egress stages
+
+This creates the characteristic "folded" Clos topology where packets can traverse: Host → Ingress Tree → Middle Stage → Egress Tree → Host.  
+
+This is why people often equate Fat-Tree's with Clos. The ingrees and middle stage of a Clos form a fat-tree as desribed by Petrini and Vanneschi as does the middle-stage and egress stage.
+
+Not all Clos are fat-tree, but a Clos where m = n = r, can be thought of as a Fat-tree.
+
+The combined work of Charles Clos, Charles Lieserson, F. Petrini, M. Vanneschi would go on to inform the work of Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat's in thier 2008 paper [A Scalable, Commodity Data Center Network Architecture](https://cseweb.ucsd.edu/~vahdat/papers/sigcomm08.pdf) which in turn would lay the foundation upon which most modern datacenter networks have been built since.
 
 ## Definitions
 
-The following are taken from Petrini and M. Vanneschi's paper [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
+The following are taken from Petrini and Vanneschi's paper [k-ary n-trees: High Performance Networks for Massively Parallel Architectures](https://ieeexplore.ieee.org/document/580853)
 
-### Fat-tree
+
+## Vizualizing
+
+The following definitions were pulled from Petrini and Vanneschi's paper and used as the foundation for the visualizer
+
+### Fat-tree Definition
 
 *(Fat-tree)*: A fat-tree is a collection of vertices connected by edges and is defined recursively as follows:
 
@@ -53,23 +74,6 @@ There is an edge between the switch ⟨w₀, w₁, ..., wₙ₋₂, n-1⟩ and t
 - wᵢ = pᵢ for all i ∈ {0, 1, ..., n-2}
 
 This edge is labeled with pₙ₋₁ on the level (n-1) switch.
-
-## Properties
-
-### Structural Properties
-- k-ary n-trees are fat-trees according to Definition 2.1
-- Level 0 switches ⟨w, 0⟩ are the roots of k-ary n-trees whose subtrees are (n-1)-dimensional k-ary n-trees
-- The labeling scheme makes k-ary n-trees **delta networks**: any path from a level 0 switch to a given node (p₀, p₁, ..., pₙ₋₁) traverses the same sequence of edge labels (p₀, p₁, ..., pₙ₋₁)
-
-### Routing Properties
-- **Minimal routing** between any pair of nodes can be accomplished by:
-  1. **Ascending phase**: Send message up to one of the nearest common ancestors
-  2. **Descending phase**: Send message down the unique path to destination
-- There exists a unique minimal path between any pair of processing nodes
-
-### Special Cases
-- A k-ary n-tree of dimension n = 0 is composed of a single processing node
-- k-ary n-trees generalize the topology of k-ary n-butterflies for the internal switch structure
 
 ## Mathematical Notation Summary
 
