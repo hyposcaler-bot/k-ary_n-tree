@@ -10,7 +10,7 @@ This repo is primarily for a interactive utility for visualizing k-ary n-tree's
 git clone https://github.com/hyposcaler-bot/k-ary_n-tree.git
 ```
 
-open the file k-ary_n-tree_viz.html found in the root of the repo with your browser.
+use your browser to open the file k-ary_n-tree_viz.html file found in the root of the repo.
 
 ## Screenshot
 
